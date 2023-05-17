@@ -1,0 +1,16 @@
+name: Linter
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  cpp-linter:
+    name: C++ Linter
+    uses: ./.github/workflows/cpp-linter.yml
+
+  markdown-linter:
+    name: Markdown Linter
+    uses: ./.github/workflows/markdown.yml
