@@ -1,5 +1,9 @@
 # Standalone OSI Trace File Player
 
+[![Build](https://github.com/Persival-GmbH/standalone-osi-trace-file-player/actions/workflows/build.yml/badge.svg)](https://github.com/Persival-GmbH/standalone-osi-trace-file-player/actions/workflows/build.yml)
+[![Linter](https://github.com/Persival-GmbH/standalone-osi-trace-file-player/actions/workflows/linter.yml/badge.svg)](https://github.com/Persival-GmbH/standalone-osi-trace-file-player/actions/workflows/linter.yml)
+[![SPDX](https://github.com/Persival-GmbH/standalone-osi-trace-file-player/actions/workflows/spdx.yml/badge.svg)](https://github.com/Persival-GmbH/standalone-osi-trace-file-player/actions/workflows/spdx.yml)
+
 This mini application can read a binary ASAM OSI trace file (SensorData or SensorView) and send it step by step via TCP using ZeroMQ.
 
 ## Usage
