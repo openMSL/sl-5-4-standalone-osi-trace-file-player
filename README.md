@@ -9,10 +9,11 @@ This mini application can read a binary ASAM OSI trace file (SensorData or Senso
 ## Usage
 
 ```bash
-./trace-file-player <path/to/trace/file.osi> <ip.address:port>
+./standalone_osi_trace_file_player <path/to/trace/file.osi> <step_size_in_ms> <ip.address> <port>
 ```
 
-The player will read in the trace file step by step and send it via TCP to the given IP adress and port (e.g. 127.0.0.1:3456).
+The player will read in the trace file step by step and send it via TCP to the given IP address and port (e.g. 127.0.0.1:3456).
+The player will wait the given step size in ms before sending the next time step.
 
 ## Build Instructions
 
