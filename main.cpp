@@ -81,7 +81,9 @@ int main(int argc, char *argv[])
     std::cout << "Send messages with step size: " << step_size_ms << " ms" << std::endl;
     while (!end_of_trace)
     {
+        std::cout << "Reading frame " << played_frames << std::endl;
         std::chrono::milliseconds start_read_trace = std::chrono::duration_cast< std::chrono::milliseconds >(std::chrono::system_clock::now().time_since_epoch());
+        std::cout << "start_read_trace: " << start_read_trace.count() << std::endl;
         char *message_buf = nullptr;
         fseek(trace_file, 4 * played_frames + total_length, SEEK_SET);
         uint size = 0;
@@ -103,7 +105,6 @@ int main(int argc, char *argv[])
 
         size_t already_read = 0;
         while (already_read < size) {
-            std::cout << "Sending frame " << played_frames << std::endl;
             fseek(trace_file, 4  * (played_frames + 1) + total_length, SEEK_SET);
             size_t res = fread(message_buf + already_read, sizeof(message_buf[0]), size - already_read, trace_file);
             if (res == 0) {
@@ -115,10 +116,13 @@ int main(int argc, char *argv[])
                 already_read += res;
             }
         }
+        std::chrono::milliseconds start_sending_message = std::chrono::duration_cast< std::chrono::milliseconds >(std::chrono::system_clock::now().time_since_epoch());
+        std::cout << "start_sending_message: " << start_sending_message.count() << std::endl;
         zmq::message_t send_message(message_buf, size, nullptr);
         socket.send(send_message, zmq::send_flags::none);
 
         std::chrono::milliseconds stop_read_trace = std::chrono::duration_cast< std::chrono::milliseconds >(std::chrono::system_clock::now().time_since_epoch());
+        std::cout << "stop_read_trace: " << stop_read_trace.count() << std::endl;
         std::chrono::milliseconds delta_time_ms = std::chrono::milliseconds(step_size_ms) - (stop_read_trace - start_read_trace);
         if (delta_time_ms.count() > 0)
         {
