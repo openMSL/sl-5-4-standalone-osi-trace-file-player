@@ -115,6 +115,8 @@ int main(int argc, char *argv[])
                 already_read += res;
             }
         }
+        if(end_of_trace)
+            break ;
         zmq::message_t send_message(message_buf, size, nullptr);
         socket.send(send_message, zmq::send_flags::none);
 
