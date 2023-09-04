@@ -1,4 +1,4 @@
-# Standalone OSI Trace File Player
+# SL-5-4 Standalone OSI Trace File Player
 
 [![Build](https://github.com/Persival-GmbH/standalone-osi-trace-file-player/actions/workflows/build.yml/badge.svg)](https://github.com/Persival-GmbH/standalone-osi-trace-file-player/actions/workflows/build.yml)
 [![Linter](https://github.com/Persival-GmbH/standalone-osi-trace-file-player/actions/workflows/linter.yml/badge.svg)](https://github.com/Persival-GmbH/standalone-osi-trace-file-player/actions/workflows/linter.yml)
