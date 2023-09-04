@@ -22,7 +22,7 @@ The player will wait the given step size in ms before sending the next time step
 1. Clone this repository **with submodules**:
 
     ```bash
-    git clone https://github.com/Persival-GmbH/standalone-osi-trace-file-player.git --recurse-submodules
+    git clone https://github.com/openMSL/sl-5-4-standalone-osi-trace-file-player.git --recurse-submodules
     ```
 
 2. Install dependencies:
